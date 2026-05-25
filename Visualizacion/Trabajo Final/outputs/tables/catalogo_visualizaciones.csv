@@ -1,0 +1,8 @@
+orden,titulo,path,tipo
+1,Mapa de renta 2023,C:\Users\Carlos\Desktop\Master\Visualizacion\ProyectoFinal\outputs\figures\01_mapa_renta_2023.png,mapa
+2,Cambio de renta 2021-2023,C:\Users\Carlos\Desktop\Master\Visualizacion\ProyectoFinal\outputs\figures\02_mapa_cambio_renta_2021_2023.png,mapa
+3,Mapa del peso del sector servicios 2023,C:\Users\Carlos\Desktop\Master\Visualizacion\ProyectoFinal\outputs\figures\03_mapa_servicios_2023.png,mapa
+4,Mapa de ocupación de alta cualificación 2023,C:\Users\Carlos\Desktop\Master\Visualizacion\ProyectoFinal\outputs\figures\04_mapa_ocupacion_alta_2023.png,mapa
+5,Renta y ocupación cualificada,C:\Users\Carlos\Desktop\Master\Visualizacion\ProyectoFinal\outputs\figures\05_scatter_renta_ocupacion_2023.png,dispersión
+6,Evolución de fuentes de renta,C:\Users\Carlos\Desktop\Master\Visualizacion\ProyectoFinal\outputs\figures\06_fuentes_renta_evolucion.png,líneas
+7,Top municipios por renta,C:\Users\Carlos\Desktop\Master\Visualizacion\ProyectoFinal\outputs\figures\07_top_municipios_renta_2023.png,barras

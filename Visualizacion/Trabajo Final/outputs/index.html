@@ -1,0 +1,128 @@
+
+    <!doctype html>
+    <html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Proyecto final de visualización</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 40px;
+                background: #f7f7f7;
+                color: #222;
+            }
+            h1 {
+                max-width: 1100px;
+            }
+            .intro {
+                max-width: 1100px;
+                background: white;
+                padding: 24px;
+                border-radius: 12px;
+                margin-bottom: 24px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            }
+            .metrics {
+                display: flex;
+                gap: 16px;
+                flex-wrap: wrap;
+                margin-top: 16px;
+            }
+            .metric {
+                background: #eeeeee;
+                border-radius: 10px;
+                padding: 14px;
+                min-width: 220px;
+            }
+            .metric strong {
+                font-size: 22px;
+            }
+            .card {
+                max-width: 1100px;
+                background: white;
+                padding: 24px;
+                border-radius: 12px;
+                margin-bottom: 24px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            }
+            img {
+                width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Desigualdad territorial en Tenerife: renta, fuentes de ingresos y estructura laboral</h1>
+
+        <div class="intro">
+            <p>
+                Este resultado forma parte de un pipeline DataOps construido con Dagster.
+                La historia analiza cómo se distribuyen la renta, las fuentes de ingresos,
+                la ocupación y la actividad económica en las secciones censales de la
+                provincia de Santa Cruz de Tenerife entre 2021 y 2023.
+            </p>
+
+            <div class="metrics">
+                <div class="metric">
+                    <p>Renta media 2023</p>
+                    <strong>16,036 €</strong>
+                </div>
+                <div class="metric">
+                    <p>Peso medio servicios 2023</p>
+                    <strong>85.6 %</strong>
+                </div>
+                <div class="metric">
+                    <p>Alta cualificación media 2023</p>
+                    <strong>31.0 %</strong>
+                </div>
+            </div>
+        </div>
+
+        
+        <section class="card">
+            <h2>1. Mapa de renta 2023</h2>
+            <p>Tipo de visualización: <strong>mapa</strong></p>
+            <img src="figures/01_mapa_renta_2023.png" alt="Mapa de renta 2023">
+        </section>
+        
+        <section class="card">
+            <h2>2. Cambio de renta 2021-2023</h2>
+            <p>Tipo de visualización: <strong>mapa</strong></p>
+            <img src="figures/02_mapa_cambio_renta_2021_2023.png" alt="Cambio de renta 2021-2023">
+        </section>
+        
+        <section class="card">
+            <h2>3. Mapa del peso del sector servicios 2023</h2>
+            <p>Tipo de visualización: <strong>mapa</strong></p>
+            <img src="figures/03_mapa_servicios_2023.png" alt="Mapa del peso del sector servicios 2023">
+        </section>
+        
+        <section class="card">
+            <h2>4. Mapa de ocupación de alta cualificación 2023</h2>
+            <p>Tipo de visualización: <strong>mapa</strong></p>
+            <img src="figures/04_mapa_ocupacion_alta_2023.png" alt="Mapa de ocupación de alta cualificación 2023">
+        </section>
+        
+        <section class="card">
+            <h2>5. Renta y ocupación cualificada</h2>
+            <p>Tipo de visualización: <strong>dispersión</strong></p>
+            <img src="figures/05_scatter_renta_ocupacion_2023.png" alt="Renta y ocupación cualificada">
+        </section>
+        
+        <section class="card">
+            <h2>6. Evolución de fuentes de renta</h2>
+            <p>Tipo de visualización: <strong>líneas</strong></p>
+            <img src="figures/06_fuentes_renta_evolucion.png" alt="Evolución de fuentes de renta">
+        </section>
+        
+        <section class="card">
+            <h2>7. Top municipios por renta</h2>
+            <p>Tipo de visualización: <strong>barras</strong></p>
+            <img src="figures/07_top_municipios_renta_2023.png" alt="Top municipios por renta">
+        </section>
+        
+    </body>
+    </html>
+    
