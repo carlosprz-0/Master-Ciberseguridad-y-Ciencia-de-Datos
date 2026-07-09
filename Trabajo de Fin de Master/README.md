@@ -1,4 +1,4 @@
-# TFM - Criptografía ligera y kleptografía en ML-KEM: implementación y evaluación
+# Criptografía ligera y kleptografía en ML-KEM: implementación y evaluación
 
 Este repositorio contiene la implementación desarrollada para el Trabajo Fin de Máster, centrada en el estudio experimental de una variante kleptográfica aplicada a Kyber/ML-KEM.
 
