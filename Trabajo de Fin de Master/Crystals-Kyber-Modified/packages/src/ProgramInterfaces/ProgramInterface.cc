@@ -209,8 +209,6 @@ void ProgramInterface::run(int option, const std::vector<int>& seed) {
   }
 }
 
-// Convierte la opción de cifrado seleccionada en un nombre legible.
-// Se utiliza para mostrar información por pantalla y para nombrar los CSV de métricas.
 std::string ProgramInterface::CypherOptionToString_(int cypher_option) {
   switch (cypher_option) {
     case MCELIECE_348864:
@@ -243,10 +241,8 @@ bool ProgramInterface::runAttack(int option, const std::vector<int>& seed) {
     std::cout << "Cypher: " << cypher_name << std::endl; 
     std::cout << "Specification: " << option << std::endl;
 
-    bool not_allways_success = false;    
+    bool not_allways_success = false;
 
-  // Si se activa ENABLE_TIME, se generan métricas en milisegundos
-  // para analizar el rendimiento del ataque con cada mecanismo.
     #ifdef TIME
     std::string output_file =
         "results_attack_" + cypher_name + "_" + std::to_string(option) + ".csv";

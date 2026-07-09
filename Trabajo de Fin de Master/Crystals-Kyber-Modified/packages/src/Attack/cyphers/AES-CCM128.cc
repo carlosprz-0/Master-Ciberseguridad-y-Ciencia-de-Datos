@@ -8,8 +8,6 @@
 
 #include "../../Components/Keccak.h"
 
-// Inicializa AES-CCM128 generando material secreto de 32 bytes.
-// Este material se usa posteriormente para derivar la clave AES efectiva.
 AESCCM128::AESCCM128() {
   Bytes key_material = GenerateKeyMaterial_();
 
@@ -32,8 +30,6 @@ Bytes AESCCM128::GenerateNonce_() const {
   return Bytes(nonce);
 }
 
-// Genera material secreto de tamaño equivalente al de la semilla.
-// Posteriormente este material se procesa con una KDF para obtener una clave ASCON válida.
 Bytes AESCCM128::GenerateKeyMaterial_() const {
   std::vector<unsigned char> key_material(KEY_MATERIAL_SIZE);
 
@@ -45,9 +41,6 @@ Bytes AESCCM128::GenerateKeyMaterial_() const {
   return Bytes(key_material);
 }
 
-// Aplica una KDF basada en Keccak para obtener una clave AES de 128 bits.
-// Esto evita usar una clave fija hardcodeada y permite usar material secreto
-// de mayor tamaño sin romper el tamaño de clave esperado por AES-CCM128.
 std::array<unsigned char, AESCCM128::KEY_SIZE> AESCCM128::DeriveKey_(const Bytes& key_material) const {
   if (key_material.GetBytesSize() == 0) {
     throw std::runtime_error("ERROR: Empty AES-CCM key material.");
@@ -70,9 +63,6 @@ std::pair<Bytes, Bytes> AESCCM128::Encrypt(const Bytes& message) {
   return EncryptWithKey(message, internal_key_material);
 }
 
-// Cifra la semilla de Kyber con ASCON-AEAD128.
-// El resultado incluye nonce + ciphertext + tag de autenticación.
-// Este ciphertext será posteriormente insertado en la clave pública modificada.
 std::pair<Bytes, Bytes> AESCCM128::EncryptWithKey(const Bytes& message, const Bytes& key_material) {
   Bytes nonce = GenerateNonce_();
   Bytes associated_data = BuildAssociatedData_();
@@ -151,8 +141,6 @@ std::pair<Bytes, Bytes> AESCCM128::EncryptWithKey(const Bytes& message, const By
   return {cyphertext_bytes, message};
 }
 
-// Recupera la semilla cifrada usando el material secreto proporcionado.
-// Si la autenticación falla, significa que el ciphertext o la clave no son válidos.
 Bytes AESCCM128::Decrypt(const Bytes& cyphertext, const Bytes& sk) {
   std::vector<unsigned char> input = cyphertext.GetBytes();
 

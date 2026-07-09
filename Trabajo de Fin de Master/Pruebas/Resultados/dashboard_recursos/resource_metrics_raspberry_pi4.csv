@@ -1,0 +1,7 @@
+platform,cipher,level,user_time_s,system_time_s,cpu_percent,elapsed_time,max_rss_kb
+raspberry_pi4,ascon-aead128,512,29.34,0.02,99,0:29.58,8448
+raspberry_pi4,ascon-aead128,768,44.24,0.00,99,0:44.33,8636
+raspberry_pi4,ascon-aead128,1024,61.43,0.01,99,1:01.56,8640
+raspberry_pi4,aes-ccm128,512,29.47,0.01,99,0:29.54,13312
+raspberry_pi4,aes-ccm128,768,44.23,0.00,99,0:44.32,11328
+raspberry_pi4,aes-ccm128,1024,61.35,0.00,99,1:01.47,13112

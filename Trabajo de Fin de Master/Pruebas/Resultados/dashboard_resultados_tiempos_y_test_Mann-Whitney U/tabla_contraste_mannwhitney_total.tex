@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrrlll}
+\hline
+\textbf{Plataforma} & \textbf{Nivel} & \textbf{Iter.} & \textbf{Media Ascon} & \textbf{Media AES} & \textbf{Mediana Ascon} & \textbf{Mediana AES} & \textbf{$\Delta$ medias} & \textbf{$\Delta$ medianas} & \textbf{$p_{\mathrm{Holm}}$} & \textbf{Cliff} & \textbf{Éxito} \\
+\hline
+PC personal & 512 & 1000 & 2.061943 & 2.080635 & 2.022995 & 2.032250 & -0.018692 & -0.009255 & $2.90\cdot 10^{-7}$ & -0.138 (despreciable) & 1000 / 1000 \\
+PC personal & 768 & 1000 & 3.233732 & 3.209672 & 3.180061 & 3.143707 & 0.024060 & 0.036354 & $1.59\cdot 10^{-14}$ & 0.204 (pequeño) & 1000 / 1000 \\
+PC personal & 1024 & 1000 & 4.450487 & 4.443736 & 4.370857 & 4.382680 & 0.006751 & -0.011823 & 0.006417 & -0.070 (despreciable) & 1000 / 1000 \\
+Raspberry Pi 4 & 512 & 1000 & 29.494728 & 29.600364 & 29.336282 & 29.458152 & -0.105636 & -0.121870 & $7.72\cdot 10^{-145}$ & -0.664 (grande) & 1000 / 1000 \\
+Raspberry Pi 4 & 768 & 1000 & 44.320055 & 44.328559 & 44.239434 & 44.225523 & -0.008504 & 0.013911 & $2.08\cdot 10^{-5}$ & 0.114 (despreciable) & 1000 / 1000 \\
+Raspberry Pi 4 & 1024 & 1000 & 61.499049 & 61.481756 & 61.432189 & 61.403594 & 0.017293 & 0.028595 & $3.05\cdot 10^{-12}$ & 0.185 (pequeño) & 1000 / 1000 \\
+\hline
+\end{tabular}%
+}
+\caption{Contraste de Mann-Whitney U entre ASCON-AEAD128 y AES-CCM128 para la métrica T.Total, con corrección Holm-Bonferroni y tamaño del efecto mediante Cliff's delta. Los tiempos están expresados en milisegundos.}
+\label{tab:mann-whitney-total}
+\end{table}

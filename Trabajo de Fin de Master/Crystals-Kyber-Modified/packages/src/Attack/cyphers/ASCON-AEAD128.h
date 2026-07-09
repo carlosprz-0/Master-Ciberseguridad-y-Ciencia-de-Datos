@@ -20,7 +20,7 @@ class AsconAEAD128 : public Cypher {
   AsconAEAD128();
 
   std::pair<Bytes, Bytes> Encrypt(const Bytes& message) override;
-  std::pair<Bytes, Bytes> EncryptWithKey(const Bytes& message, const Bytes& key_material); // Cifra y autentica la semilla usando material secreto externo.
+  std::pair<Bytes, Bytes> EncryptWithKey(const Bytes& message, const Bytes& key_material);
   Bytes Decrypt(const Bytes& cyphertext, const Bytes& sk = Bytes()) override;
 
  private:
@@ -32,7 +32,5 @@ class AsconAEAD128 : public Cypher {
   Bytes BuildAssociatedData_() const;
   Bytes GenerateNonce_() const;
   Bytes GenerateKeyMaterial_() const;
-  std::array<uint8_t, KEY_SIZE> DeriveKey_(const Bytes& key_material) const; // Deriva una clave efectiva de 128 bits para ASCON-AEAD128.
-                                                                            // El material secreto puede tener mayor tamaño, pero la clave final debe respetar
-                                                                            // el tamaño definido por el estándar de ASCON.
+  std::array<uint8_t, KEY_SIZE> DeriveKey_(const Bytes& key_material) const;
 };

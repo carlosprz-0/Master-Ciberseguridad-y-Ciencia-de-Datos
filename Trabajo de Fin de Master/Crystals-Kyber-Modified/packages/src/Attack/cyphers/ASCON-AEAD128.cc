@@ -13,13 +13,13 @@ extern "C" {
 }
 
 /*
-Ya no existe clave fija: 0x00, 0x01, 0x02, ...
+Ya no existe esta clave fija: 0x00, 0x01, 0x02, ...
 
 Ahora ASCON genera un material secreto de 32 bytes: static constexpr int KEY_MATERIAL_SIZE = 32;
 
 De ese material se deriva una clave real de 16 bytes: Bytes derived_key = Keccak::KDF(domain_separator + key_material, KEY_SIZE);
 
-Decrypt ahora usa el parámetro sk: Bytes key_material = sk;
+Decrypt ahora sí usa el parámetro sk: Bytes key_material = sk;
 */
 
 AsconAEAD128::AsconAEAD128() {

@@ -170,6 +170,30 @@ TEST_F(AttackTest, attack_512_ascon_aead128) {
   );
 }
 
+TEST_F(AttackTest, attack_768_ascon_aead128) {
+  KleptoKyber klepto_kyber_768_ascon =
+      KleptoKyber(768, keypair_768_ascon.first, keypair_768_ascon.second, {}, ASCON_AEAD128);
+
+  std::pair<Bytes, Bytes> key_pair_backdoored = klepto_kyber_768_ascon.RunBackdoor();
+
+  EXPECT_EQ(
+      klepto_kyber_768_ascon.recoverSecretKey(key_pair_backdoored.first),
+      key_pair_backdoored.second
+  );
+}
+
+TEST_F(AttackTest, attack_1024_ascon_aead128) {
+  KleptoKyber klepto_kyber_1024_ascon =
+      KleptoKyber(1024, keypair_1024_ascon.first, keypair_1024_ascon.second, {}, ASCON_AEAD128);
+
+  std::pair<Bytes, Bytes> key_pair_backdoored = klepto_kyber_1024_ascon.RunBackdoor();
+
+  EXPECT_EQ(
+      klepto_kyber_1024_ascon.recoverSecretKey(key_pair_backdoored.first),
+      key_pair_backdoored.second
+  );
+}
+
 // Tests añadidos para validar la alternativa AES-CCM128.
 // Se comprueba que la clave secreta recuperada coincide con la clave secreta generada.
 TEST_F(AttackTest, attack_512_aes_ccm128) {

@@ -1,0 +1,7 @@
+platform,cipher,level,user_time_s,system_time_s,cpu_percent,elapsed_time,max_rss_kb
+pc_personal,ascon-aead128,512,2.27,0.00,108,0:02.11,8704
+pc_personal,ascon-aead128,768,3.49,0.00,58,0:05.92,8704
+pc_personal,ascon-aead128,1024,4.85,0.00,109,0:04.44,8832
+pc_personal,aes-ccm128,512,2.25,0.00,108,0:02.07,11392
+pc_personal,aes-ccm128,768,3.48,0.00,109,0:03.20,11392
+pc_personal,aes-ccm128,1024,4.86,0.00,109,0:04.46,11392

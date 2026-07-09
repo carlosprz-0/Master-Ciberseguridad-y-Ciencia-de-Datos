@@ -44,16 +44,7 @@ std::pair<Bytes, Bytes> KleptoKyber::RunBackdoor()  {
   Bytes seed_b;
   std::pair<Bytes, Bytes> pair_ct_sharedm;
 
-
-  // En los mecanismos AEAD simétricos, ASCON-AEAD128 y AES-CCM128,
-  // no se realiza una encapsulación asimétrica como en Classic McEliece.
-  // En su lugar, se genera la semilla de Kyber y se protege mediante
-  // cifrado autenticado. El ciphertext resultante se inserta después
-  // en la clave pública modificada.
-
   if (cypher_option_ == ASCON_AEAD128) {
-  // Caso ASCON: la semilla se cifra y autentica con ASCON-AEAD128.
-  // La clave efectiva se deriva del material secreto asociado al atacante.
   seed_b = GenerateSeed_(seed_size_);
 
   AsconAEAD128* ascon_box = dynamic_cast<AsconAEAD128*>(cypher_box_.get());
@@ -64,8 +55,6 @@ std::pair<Bytes, Bytes> KleptoKyber::RunBackdoor()  {
   pair_ct_sharedm = ascon_box->EncryptWithKey(seed_b, attacker_pk_);
 
 } else if (cypher_option_ == AES_CCM_128) {
-  // Caso AES-CCM: se sigue el mismo flujo que ASCON,
-  // pero usando AES-CCM128 como mecanismo AEAD de comparación.
   seed_b = GenerateSeed_(seed_size_);
 
   AESCCM128* aes_box = dynamic_cast<AESCCM128*>(cypher_box_.get());
